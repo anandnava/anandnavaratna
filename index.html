@@ -35,23 +35,43 @@
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-200 antialiased transition-colors duration-200">
 
   <!-- Navigation -->
-  <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-slate-950/80 border-b border-slate-200 dark:border-slate-800">
+  <header class="sticky top-0 z-40 backdrop-blur-md bg-white/80 dark:bg-slate-950/80 border-b border-slate-200 dark:border-slate-800">
     <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
       <a href="#top" class="font-serif font-bold text-lg tracking-tight text-slate-900 dark:text-white">
         Anand R. Navaratna
       </a>
-      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600 dark:text-slate-300">
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
         <a href="#about" class="hover:text-brand-600 dark:hover:text-indigo-400 transition">About</a>
         <a href="#research" class="hover:text-brand-600 dark:hover:text-indigo-400 transition">Research</a>
         <a href="#publications" class="hover:text-brand-600 dark:hover:text-indigo-400 transition">Publications</a>
         <a href="#defence" class="hover:text-brand-600 dark:hover:text-indigo-400 transition">Defence Tech</a>
+        <a href="#gallery" class="hover:text-brand-600 dark:hover:text-indigo-400 transition">Gallery</a>
         <a href="#academics" class="hover:text-brand-600 dark:hover:text-indigo-400 transition">Academics</a>
       </nav>
-      <button id="themeToggle" aria-label="Toggle Dark Mode"
-        class="p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm transition">
-        <span id="themeIcon">🌙</span>
-      </button>
+
+      <div class="flex items-center gap-2">
+        <button id="themeToggle" aria-label="Toggle Dark Mode"
+          class="p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm transition">
+          <span id="themeIcon">🌙</span>
+        </button>
+        <button id="mobileMenuBtn" aria-label="Open Navigation Menu"
+          class="md:hidden p-2 rounded-lg border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-sm transition">
+          ☰
+        </button>
+      </div>
     </div>
+
+    <!-- Mobile Nav Drawer -->
+    <nav id="mobileMenu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-6 py-4 space-y-3 text-sm font-medium">
+      <a href="#about" class="block hover:text-indigo-600">About</a>
+      <a href="#research" class="block hover:text-indigo-600">Research</a>
+      <a href="#publications" class="block hover:text-indigo-600">Publications</a>
+      <a href="#defence" class="block hover:text-indigo-600">Defence Tech</a>
+      <a href="#gallery" class="block hover:text-indigo-600">Gallery</a>
+      <a href="#academics" class="block hover:text-indigo-600">Academics</a>
+    </nav>
   </header>
 
   <main id="top" class="max-w-5xl mx-auto px-6">
@@ -70,10 +90,19 @@
             Research Scholar in <strong>Digital Transformation &amp; AI Governance</strong> and <strong>Aeronautical Engineer</strong>. Bridging computational public policy, citizen-centric digital governance, and modern defence technology.
           </p>
 
-          <!-- External Academic Profiles -->
-          <div class="mt-7 flex flex-wrap gap-3">
+          <!-- Primary CTA & Academic Profiles -->
+          <div class="mt-7 flex flex-wrap items-center gap-3">
+            <!-- Downloadable PDF CV Button -->
+            <a href="assets/Anand_Navaratna_CV.pdf" download="Anand_Raam_Navaratna_CV.pdf"
+               class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-indigo-600 text-white text-sm font-medium hover:bg-indigo-700 transition shadow-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              Download CV (PDF)
+            </a>
+
             <a href="https://scholar.google.com/citations?user=qd8-6ZEAAAAJ&hl=en" target="_blank" rel="noopener"
-               class="px-4 py-2.5 rounded-lg bg-slate-900 text-white dark:bg-indigo-600 text-sm font-medium hover:opacity-90 transition">
+               class="px-4 py-2.5 rounded-lg bg-slate-900 text-white dark:bg-slate-800 dark:border dark:border-slate-700 text-sm font-medium hover:opacity-90 transition">
               Google Scholar
             </a>
             <a href="https://orcid.org/0009-0009-7199-259X" target="_blank" rel="noopener"
@@ -197,7 +226,7 @@
 
       <!-- Filter Pills -->
       <div class="flex flex-wrap gap-2 mb-6" id="filterButtons">
-        <button data-filter="all" class="filter-btn active px-3.5 py-1.5 rounded-full text-xs font-medium bg-slate-900 text-white dark:bg-indigo-600 transition">All (8)</button>
+        <button data-filter="all" class="filter-btn px-3.5 py-1.5 rounded-full text-xs font-medium bg-slate-900 text-white dark:bg-indigo-600 transition">All (8)</button>
         <button data-filter="ai-policy" class="filter-btn px-3.5 py-1.5 rounded-full text-xs font-medium bg-slate-200/70 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition">AI Policy</button>
         <button data-filter="digital-gov" class="filter-btn px-3.5 py-1.5 rounded-full text-xs font-medium bg-slate-200/70 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition">Digital Governance</button>
         <button data-filter="defence" class="filter-btn px-3.5 py-1.5 rounded-full text-xs font-medium bg-slate-200/70 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition">Defence Technology</button>
@@ -230,6 +259,25 @@
           </p>
         </div>
       </div>
+    </section>
+
+    <!-- Conference & Research Diagram Gallery -->
+    <section id="gallery" class="py-16 border-b border-slate-200 dark:border-slate-800">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+        <div>
+          <h2 class="font-serif text-2xl font-bold text-slate-900 dark:text-white">Research Diagrams &amp; Conferences</h2>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Click any visual to inspect frameworks and conference highlights in full screen.</p>
+        </div>
+
+        <!-- Gallery Filter Pills -->
+        <div class="flex flex-wrap gap-2" id="galleryFilters">
+          <button data-gfilter="all" class="gfilter-btn px-3.5 py-1.5 rounded-full text-xs font-medium bg-slate-900 text-white dark:bg-indigo-600 transition">All</button>
+          <button data-gfilter="diagram" class="gfilter-btn px-3.5 py-1.5 rounded-full text-xs font-medium bg-slate-200/70 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition">Research Diagrams</button>
+          <button data-gfilter="conference" class="gfilter-btn px-3.5 py-1.5 rounded-full text-xs font-medium bg-slate-200/70 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition">Conferences</button>
+        </div>
+      </div>
+
+      <div id="galleryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
     </section>
 
     <!-- Academics & Qualifications -->
@@ -265,11 +313,30 @@
 
   </main>
 
+  <!-- Lightbox Modal for Gallery -->
+  <div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/90 backdrop-blur-sm p-4 sm:p-8" role="dialog" aria-modal="true">
+    <div class="relative max-w-4xl w-full bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800">
+      <button id="lightboxClose" aria-label="Close Preview"
+        class="absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-slate-900/80 text-white flex items-center justify-center hover:bg-slate-900 transition">
+        ✕
+      </button>
+      <div class="bg-slate-100 dark:bg-slate-950 flex items-center justify-center max-h-[72vh] overflow-auto">
+        <img id="lightboxImg" src="" alt="" class="w-full h-auto object-contain max-h-[72vh]" />
+      </div>
+      <div class="p-5">
+        <span id="lightboxBadge" class="inline-block text-[11px] font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 mb-1"></span>
+        <h3 id="lightboxTitle" class="font-semibold text-lg text-slate-900 dark:text-white"></h3>
+        <p id="lightboxDesc" class="text-sm text-slate-600 dark:text-slate-400 mt-1"></p>
+      </div>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer class="border-t border-slate-200 dark:border-slate-800 py-10 mt-10">
     <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
       <p>&copy; <span id="year"></span> Anand Raam Navaratna. Hosted on GitHub Pages.</p>
       <div class="flex gap-5">
+        <a href="assets/Anand_Navaratna_CV.pdf" download class="hover:text-slate-900 dark:hover:text-white">CV (PDF)</a>
         <a href="https://scholar.google.com/citations?user=qd8-6ZEAAAAJ&hl=en" target="_blank" class="hover:text-slate-900 dark:hover:text-white">Scholar</a>
         <a href="https://orcid.org/0009-0009-7199-259X" target="_blank" class="hover:text-slate-900 dark:hover:text-white">ORCID</a>
         <a href="https://www.researchgate.net/profile/Anand_Navaratna" target="_blank" class="hover:text-slate-900 dark:hover:text-white">ResearchGate</a>
@@ -277,8 +344,9 @@
     </div>
   </footer>
 
-  <!-- Publications Data & Interactivity -->
+  <!-- Data & Interactivity -->
   <script>
+    /* ================= PUBLICATIONS DATA ================= */
     const publications = [
       {
         title: "Going Beyond Conventional Conflicts: Electronic Warfare as a Decisive Instrument of Modern Statecraft",
@@ -362,6 +430,59 @@
       }
     ];
 
+    /* ================= GALLERY DATA ================= */
+    const galleryItems = [
+      {
+        title: "Indian Approach to AI Policy (Three-Sector Framework)",
+        category: "diagram",
+        label: "Research Diagram",
+        year: "2023",
+        src: "assets/gallery/ai-policy-comparative.png",
+        description: "Comparative policy evolution framework across India's IT/ITES, Telecommunications, and Biotechnology sectors."
+      },
+      {
+        title: "AI Governance, Policy & Regulation: Bibliometric Map",
+        category: "diagram",
+        label: "Research Diagram",
+        year: "2024",
+        src: "assets/gallery/bibliometric-analysis.png",
+        description: "Co-occurrence and citation cluster network mapping global AI governance and regulatory scholarship."
+      },
+      {
+        title: "Computational Analysis of National AI Strategies",
+        category: "diagram",
+        label: "Research Diagram",
+        year: "2025",
+        src: "assets/gallery/national-ai-strategies.png",
+        description: "NLP keyword extraction and topic modelling paradigm across national AI policy documents."
+      },
+      {
+        title: "AI Governance: Macro–Meso–Micro Translation Model",
+        category: "diagram",
+        label: "Research Diagram",
+        year: "2025",
+        src: "assets/gallery/policy-to-practice.png",
+        description: "Three-level analytical model bridging national regulatory intent with organizational and citizen-centric practice."
+      },
+      {
+        title: "IEEE GCON 2025 Presentation",
+        category: "conference",
+        label: "Conference",
+        year: "2025",
+        src: "assets/gallery/ieee-gcon-2025.jpg",
+        description: "Presenting computational topic modelling findings on National AI Policies at the IEEE Guwahati Subsection Conference."
+      },
+      {
+        title: "National Conference Presentations (BITS Pilani / IIM Indore)",
+        category: "conference",
+        label: "Conference",
+        year: "2024",
+        src: "assets/gallery/conference-presentation.jpg",
+        description: "Academic colloquium and paper presentation highlights across BITS Pilani, IIM Indore, GIM Panjim, and NERIST."
+      }
+    ];
+
+    /* ================= PUBLICATIONS LOGIC ================= */
     const pubList = document.getElementById('pubList');
     const searchInput = document.getElementById('pubSearch');
     const filterBtns = document.querySelectorAll('.filter-btn');
@@ -380,7 +501,7 @@
         return;
       }
 
-      pubList.innerHTML = filtered.map((p, idx) => {
+      pubList.innerHTML = filtered.map(p => {
         const citeText = `${p.authors} (${p.year}). ${p.title}. ${p.venue}.`;
         return `
           <article class="p-5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-indigo-300 dark:hover:border-indigo-700 transition">
@@ -425,7 +546,102 @@
 
     searchInput.addEventListener('input', renderPublications);
 
-    // Dark Mode Toggle
+    /* ================= GALLERY & LIGHTBOX LOGIC ================= */
+    const galleryGrid = document.getElementById('galleryGrid');
+    const gFilterBtns = document.querySelectorAll('.gfilter-btn');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxBadge = document.getElementById('lightboxBadge');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxDesc = document.getElementById('lightboxDesc');
+    let activeGFilter = 'all';
+
+    function makePlaceholderSVG(path, label) {
+      const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'>
+        <rect width='800' height='450' fill='#1e293b'/>
+        <rect x='24' y='24' width='752' height='402' rx='12' fill='none' stroke='#475569' stroke-dasharray='8 6' stroke-width='2'/>
+        <text x='400' y='210' fill='#94a3b8' font-family='sans-serif' font-size='20' font-weight='600' text-anchor='middle'>${label}</text>
+        <text x='400' y='245' fill='#64748b' font-family='monospace' font-size='15' text-anchor='middle'>Upload: ${path}</text>
+      </svg>`;
+      return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+    }
+
+    function renderGallery() {
+      const filtered = galleryItems.filter(item => activeGFilter === 'all' || item.category === activeGFilter);
+
+      galleryGrid.innerHTML = filtered.map((item, idx) => {
+        const fallback = makePlaceholderSVG(item.src, item.label);
+        return `
+          <div onclick="openLightbox(${galleryItems.indexOf(item)})"
+               class="group cursor-pointer rounded-xl overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-indigo-400 dark:hover:border-indigo-600 transition shadow-sm flex flex-col">
+            <div class="relative aspect-video bg-slate-100 dark:bg-slate-800 overflow-hidden">
+              <img src="${item.src}" alt="${item.title}"
+                   onerror="this.onerror=null; this.src='${fallback}';"
+                   class="w-full h-full object-cover group-hover:scale-105 transition duration-300" />
+              <div class="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/30 transition flex items-center justify-center">
+                <span class="opacity-0 group-hover:opacity-100 px-3 py-1 rounded-full bg-white/90 text-slate-900 text-xs font-semibold transition">
+                  Zoom ⤢
+                </span>
+              </div>
+            </div>
+            <div class="p-4 flex-1 flex flex-col">
+              <div class="flex items-center justify-between text-[11px] font-semibold uppercase tracking-wider mb-1.5">
+                <span class="text-indigo-600 dark:text-indigo-400">${item.label}</span>
+                <span class="text-slate-400">${item.year}</span>
+              </div>
+              <h3 class="font-semibold text-sm text-slate-900 dark:text-white leading-snug">${item.title}</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 line-clamp-2">${item.description}</p>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    window.openLightbox = function(index) {
+      const item = galleryItems[index];
+      const fallback = makePlaceholderSVG(item.src, item.label);
+      lightboxImg.src = item.src;
+      lightboxImg.onerror = () => { lightboxImg.onerror = null; lightboxImg.src = fallback; };
+      lightboxImg.alt = item.title;
+      lightboxBadge.textContent = `${item.label} • ${item.year}`;
+      lightboxTitle.textContent = item.title;
+      lightboxDesc.textContent = item.description;
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    };
+
+    function closeLightbox() {
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+    gFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeGFilter = btn.dataset.gfilter;
+        gFilterBtns.forEach(b => {
+          b.classList.remove('bg-slate-900', 'text-white', 'dark:bg-indigo-600');
+          b.classList.add('bg-slate-200/70', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+        });
+        btn.classList.remove('bg-slate-200/70', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+        btn.classList.add('bg-slate-900', 'text-white', 'dark:bg-indigo-600');
+        renderGallery();
+      });
+    });
+
+    /* ================= MOBILE MENU & DARK MODE ================= */
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
     const html = document.documentElement;
     const toggle = document.getElementById('themeToggle');
     const icon = document.getElementById('themeIcon');
@@ -442,6 +658,7 @@
 
     document.getElementById('year').textContent = new Date().getFullYear();
     renderPublications();
+    renderGallery();
   </script>
 </body>
 </html>
